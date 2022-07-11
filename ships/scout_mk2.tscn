@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://arts/Texture2D/sactx-2048x2048-ETC2-Ships-46f90d4a.png" type="Texture" id=1]
+[ext_resource path="res://Trail.tscn" type="PackedScene" id=2]
+[ext_resource path="res://protocols/slot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ship.gd" type="Script" id=4]
+[ext_resource path="res://protocols/item.tscn" type="PackedScene" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 1.0
+
+[node name="Ship" type="RigidBody2D"]
+mass = 200.0
+physics_material_override = SubResource( 1 )
+continuous_cd = 1
+contacts_reported = 2
+contact_monitor = true
+can_sleep = false
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 4 )
+
+[node name="shots" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="main" type="Node2D" parent="shots"]
+position = Vector2( 0, -224 )
+
+[node name="engines" type="Node2D" parent="."]
+
+[node name="master" type="Node2D" parent="engines"]
+position = Vector2( 0, 192 )
+
+[node name="protocols" type="Node2D" parent="."]
+
+[node name="slot" parent="protocols" instance=ExtResource( 3 )]
+z_index = 10
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="type_slots" parent="protocols/slot" index="0"]
+tile_data = PoolIntArray( -262144, 6, 0, -196608, 6, 0, -65537, 3, 0, -131072, 6, 0, -131071, 3, 0, -1, 9, 0, -65536, 6, 0, -65535, 9, 0, 65534, 9, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 9, 0, 131069, 9, 0, 131070, 5, 0, 131071, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 9, 0, 196605, 9, 0, 196606, 5, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 5, 0, 131075, 9, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0 )
+
+[node name="kind_slots" parent="protocols/slot" index="1"]
+tile_data = PoolIntArray( -262144, 1, 0, -196608, 1, 0, -131072, 1, 0, -65536, 1, 0 )
+
+[node name="item" parent="protocols" instance=ExtResource( 5 )]
+
+[node name="shell" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -134, -11, -64, -201, -12, -278, 12, -278, 59, -203, 130, -23, 223, 128, 1, 253, -221, 127 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="texture" type="Sprite" parent="."]
+position = Vector2( 3, 2.79397e-09 )
+rotation = -1.56645
+scale = Vector2( 2.16231, 2.16231 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1316, 234, 264, 205 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="components" type="Node2D" parent="."]
+z_index = 11
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Trail" parent="." instance=ExtResource( 2 )]
+z_index = -1
+targetPath = NodePath("../engines/master")
+segmentsMax = 10
+
+[editable path="protocols/slot"]

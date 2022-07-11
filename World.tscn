@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://World.gd" type="Script" id=4]
+[ext_resource path="res://Font_Arial.tres" type="DynamicFont" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="layers" type="Node" parent="."]
+
+[node name="bullets" type="Node" parent="layers"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+current = true
+zoom = Vector2( 6, 6 )
+script = ExtResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 55.0
+margin_top = 57.0
+margin_right = 361.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 5 )
+text = "res://Ship.tscn"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 369.0
+margin_top = 52.0
+margin_right = 393.0
+margin_bottom = 76.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 56.0
+margin_top = 122.0
+margin_right = 155.0
+margin_bottom = 142.0
+custom_fonts/font = ExtResource( 5 )
+text = "load"
+
+[node name="ItemList" type="HFlowContainer" parent="."]
+margin_left = 461.0
+margin_top = 55.0
+margin_right = 643.0
+margin_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ItemList"]
+margin_right = 182.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "placeholder"
+
+[node name="CCNode" type="Node" parent="."]
+
+[connection signal="gui_input" from="TextEdit" to="." method="_on_TextEdit_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

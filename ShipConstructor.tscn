@@ -1,0 +1,527 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://ShipConstructor.gd" type="Script" id=2]
+[ext_resource path="res://Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://arts/components.png" type="Texture" id=5]
+[ext_resource path="res://Container.gd" type="Script" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 846, 518, 188, 188 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 6, 6, 316, 316 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 697, 1312, 44, 126 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1005, 1240, 66, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 292, 1344, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4, 532, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 264, 1186, 128, 74 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 668, 1055, 128, 108 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1681, 994, 125, 124 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 540, 724, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1886, 458, 157, 170 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 591, 271, 245, 244 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1089, 272, 184, 249 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 337, 272, 241, 242 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1949, 1111, 88, 123 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 207, 727, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1492, 1256, 128, 59 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1414, 1244, 65, 128 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 11, 1145, 113, 86 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 142, 1182, 110, 88 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 806, 1053, 124, 116 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 596, 4, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 92, 1285, 52, 121 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1797, 1246, 108, 83 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 940, 1142, 128, 86 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1980, 1326, 44, 111 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1674, 1388, 60, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1005, 1240, 66, 128 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 765, 1275, 52, 125 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 662, 1176, 86, 128 )
+
+[node name="ShipConstructor" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="component_indicator" type="Node2D" parent="."]
+z_index = 15
+
+[node name="yard" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Container" type="GridContainer" parent="CanvasLayer"]
+margin_left = 44.0
+margin_top = 21.0
+margin_right = 108.0
+margin_bottom = 85.0
+grow_horizontal = 0
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 2
+script = ExtResource( 6 )
+
+[node name="reactor21" type="TextureRect" parent="CanvasLayer/Container"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="reactor22" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="afterburner1" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="accelerator1" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="armor11" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="armor23" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="focus2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 96.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="shield2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 64.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="teleporter1" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 128.0
+margin_right = 32.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="shield_generator2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 128.0
+margin_right = 64.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="core" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 160.0
+margin_right = 32.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="drone_power3" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 64.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="dronebay2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 192.0
+margin_right = 32.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="zygote3" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 64.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="range1" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 224.0
+margin_right = 32.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="drone_replicator2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 224.0
+margin_right = 64.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="engine3" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 256.0
+margin_right = 32.0
+margin_bottom = 288.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 17 )
+expand = true
+stretch_mode = 6
+
+[node name="engine2" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 256.0
+margin_right = 64.0
+margin_bottom = 288.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 18 )
+expand = true
+stretch_mode = 6
+
+[node name="pointdefense" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 288.0
+margin_right = 32.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 19 )
+expand = true
+stretch_mode = 6
+
+[node name="shield1" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 288.0
+margin_right = 64.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 20 )
+expand = true
+stretch_mode = 6
+
+[node name="DroneDamage" type="TextureRect" parent="CanvasLayer/Container"]
+margin_top = 320.0
+margin_right = 32.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 21 )
+expand = true
+stretch_mode = 6
+
+[node name="ram" type="TextureRect" parent="CanvasLayer/Container"]
+margin_left = 32.0
+margin_top = 320.0
+margin_right = 64.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 22 )
+expand = true
+stretch_mode = 6
+
+[node name="Container2" type="GridContainer" parent="CanvasLayer"]
+margin_left = 150.0
+margin_top = 21.0
+margin_right = 214.0
+margin_bottom = 373.0
+grow_horizontal = 0
+mouse_filter = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 2
+script = ExtResource( 6 )
+
+[node name="gun5" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 23 )
+expand = true
+stretch_mode = 6
+
+[node name="shock2" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 24 )
+expand = true
+stretch_mode = 6
+
+[node name="missile3" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 25 )
+expand = true
+stretch_mode = 6
+
+[node name="torpedo4" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 26 )
+expand = true
+stretch_mode = 6
+
+[node name="gun1" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 27 )
+expand = true
+stretch_mode = 6
+
+[node name="accelerator1" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="torpedo1" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_top = 96.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 29 )
+expand = true
+stretch_mode = 6
+
+[node name="gun6" type="TextureRect" parent="CanvasLayer/Container2"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 64.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture = SubResource( 30 )
+expand = true
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -128.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer"]
+margin_bottom = 128.0
+size_flags_vertical = 3
+
+[node name="SpriteSSS" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 430, 111 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+current = true
+zoom = Vector2( 6, 6 )
+script = ExtResource( 3 )
+
+[connection signal="gui_input" from="CanvasLayer/Container" to="CanvasLayer/Container" method="_on_Container_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/Container2" to="CanvasLayer/Container2" method="_on_Container_gui_input"]
