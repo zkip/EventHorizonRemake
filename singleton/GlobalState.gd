@@ -120,7 +120,8 @@ var all_components = {
 	"torpedo4": preload("res://Components/weapons/torpedo4.tscn"),
 }
 
-var currentPlayer = explorerShipManager.test_regist()
+# var currentPlayer = explorerShipManager.test_regist()
+var currentPlayer = null
 
 var activated_component = null
 

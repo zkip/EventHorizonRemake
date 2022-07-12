@@ -257,25 +257,25 @@ func _ready():
 
 	pass
 
-	var captain = get_captain()
+	# var captain = get_captain()
 
-	var licenses = captain.get_licenses()
+	# var licenses = captain.get_licenses()
 
-	for license in licenses:
-		var data = explorerShipManager.get_ship_data(license)
-		if data != null:
-			if "ship_name" in data:
-				var ship_name = data.get("ship_name")
-				var ship_scene = explorerShipManager.get_ship_scene(license)
-				var ship_inst = ship_scene.instance().init(license)
-				push_to_yard_ship_queue(ship_inst)
+	# for license in licenses:
+	# 	var data = explorerShipManager.get_ship_data(license)
+	# 	if data != null:
+	# 		if "ship_name" in data:
+	# 			var ship_name = data.get("ship_name")
+	# 			var ship_scene = explorerShipManager.get_ship_scene(license)
+	# 			var ship_inst = ship_scene.instance().init(license)
+	# 			push_to_yard_ship_queue(ship_inst)
 
-				var ship_texture = explorerShipManager.get_ship_texture(ship_name)
-				var dock_icon = load("res://DockIcon.tscn").instance().init(ship_name, ship_texture)
-				dock_icon.connect("inactivate", self, "_on_dock_icon_inactive", [license])
-				dock_icon.connect("activate", self, "_on_dock_icon_active", [license])
+	# 			var ship_texture = explorerShipManager.get_ship_texture(ship_name)
+	# 			var dock_icon = load("res://DockIcon.tscn").instance().init(ship_name, ship_texture)
+	# 			dock_icon.connect("inactivate", self, "_on_dock_icon_inactive", [license])
+	# 			dock_icon.connect("activate", self, "_on_dock_icon_active", [license])
 
-				$CanvasLayer/ScrollContainer/HBoxContainer.add_child(dock_icon)
+	# 			$CanvasLayer/ScrollContainer/HBoxContainer.add_child(dock_icon)
 
 
 func _process(_delta):

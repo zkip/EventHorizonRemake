@@ -45,11 +45,6 @@ _global_script_classes=[ {
 "path": "res://Ship.gd"
 }, {
 "base": "Node",
-"class": "ShipManager",
-"language": "GDScript",
-"path": "res://singleton/ShipManager.gd"
-}, {
-"base": "Node",
 "class": "SlotProtocol",
 "language": "GDScript",
 "path": "res://protocols/slot.gd"
@@ -58,6 +53,11 @@ _global_script_classes=[ {
 "class": "Utils",
 "language": "GDScript",
 "path": "res://singleton/Utils.gd"
+}, {
+"base": "Component",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://weapon.gd"
 } ]
 _global_script_class_icons={
 "Captain": "",
@@ -67,27 +67,26 @@ _global_script_class_icons={
 "ItemProtocol": "",
 "Protocol": "",
 "Ship": "",
-"ShipManager": "",
 "SlotProtocol": "",
-"Utils": ""
+"Utils": "",
+"Weapon": ""
 }
 
 [application]
 
 config/name="EventHorizonRemake"
-run/main_scene="res://ShipConstructor.tscn"
+run/main_scene="res://dock_ccon_test.tscn"
 config/icon="res://EventHorizonRemake.ico"
 config/windows_native_icon="res://EventHorizonRemake.ico"
 
 [autoload]
 
 utils="*res://singleton/Utils.gd"
-explorerShipManager="*res://singleton/ShipManager.gd"
-globalState="*res://singleton/globalState.gd"
+globalState="*res://singleton/GlobalState.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/easy_velocity_vector_display/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 

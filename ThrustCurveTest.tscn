@@ -128,7 +128,7 @@ __meta__ = {
 drivers = [  ]
 scattering = 90.0
 
-[node name="Trail" parent="Ship7" index="9"]
+[node name="Trail" parent="Ship7" index="6"]
 width = 40.0
 width_curve = SubResource( 7 )
 default_color = Color( 0.882353, 0.286275, 0.592157, 1 )
@@ -137,5 +137,8 @@ frequency = 40
 segmentsMax = 80
 
 [editable path="Ship5"]
+[editable path="Ship5/protocols/slot"]
 [editable path="Ship6"]
+[editable path="Ship6/protocols/slot"]
 [editable path="Ship7"]
+[editable path="Ship7/protocols/slot"]

@@ -6,8 +6,6 @@ export(float) var scattering = 0.0
 
 onready var currentDriver
 onready var shell = $shell
-onready var tag_set = utils.Set.new($protocols/item.tags)
-
 var Bullet = preload("res://Ammunitions/Missile.tscn")
 
 var license: String
@@ -53,7 +51,7 @@ func init(license_: String):
 
 
 func _ready():
-	tag_set.add("ship")
+	$protocols/item.tag_set.add("ship")
 
 	var driverPoolNode = Node.new()
 	driverPoolNode.name = "drivers"

@@ -21,4 +21,4 @@ tile_data = PoolIntArray( 0, 3, 0 )
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 292, 1344, 64, 64 )
+region_rect = Rect2( 6, 1006, 124, 124 )
